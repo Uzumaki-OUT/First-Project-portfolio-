@@ -1,0 +1,469 @@
+/* ---------- Global Styles ---------- */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f7f9fc;
+    color: #333;
+    line-height: 1.6;
+}
+
+body {
+    outline: 2px solid red;
+    overflow-x: hidden;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+
+/* Responsive images/videos/canvas */
+img,
+video,
+canvas {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* ---------- Header ---------- */
+header {
+    background-color: #1e2a38;
+    color: #fff;
+    padding: 1.5rem 2rem;
+    text-align: center;
+    position: relative;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+header h1 {
+    margin: 0;
+    font-size: 2rem;
+    letter-spacing: 1px;
+}
+
+/* ---------- Navigation ---------- */
+nav {
+    margin-top: 1rem;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    flex-wrap: wrap;
+}
+
+nav a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+nav a:hover,
+nav a:focus {
+    color: #4fc3f7;
+}
+
+/* ---------- Hamburger Menu ---------- */
+#hamburger {
+    display: none;
+    position: absolute;
+    top: 18px;
+    right: 20px;
+    width: 30px;
+    height: 25px;
+    cursor: pointer;
+    z-index: 1100;
+}
+
+#hamburger {
+    background: rgba(255, 255, 255, 0.1);
+}
+
+
+#hamburger span {
+    display: block;
+    height: 4px;
+    margin: 5px 0;
+    background-color: #fff;
+    border-radius: 2px;
+    transition: 0.3s;
+}
+
+#hamburger {
+    display: none;
+    /* hidden on desktop */
+    position: absolute;
+    top: 18px;
+    right: 20px;
+    width: 30px;
+    height: 25px;
+    cursor: pointer;
+    z-index: 1100;
+}
+
+#hamburger .bar {
+    display: block;
+    width: 100%;
+    height: 4px;
+    margin: 4px 0;
+    background-color: #fff;
+    border-radius: 2px;
+    transition: 0.3s;
+}
+
+/* Show hamburger on mobile */
+@media (max-width: 768px) {
+    #hamburger {
+        display: block;
+    }
+}
+
+
+/* ---------- Mobile Styles ---------- */
+@media (max-width: 768px) {
+    nav ul {
+        display: none;
+        flex-direction: column;
+        background-color: #1e2a38;
+        position: absolute;
+        top: 60px;
+        right: 0;
+        width: 200px;
+        padding: 1rem 0;
+        border-radius: 0 0 0 8px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+        z-index: 1000;
+    }
+
+    nav ul.active {
+        display: flex;
+    }
+
+    nav li {
+        margin: 0;
+    }
+
+    nav li+li {
+        margin-top: 1rem;
+    }
+
+    nav a {
+        padding: 0.75rem 1.5rem;
+        display: block;
+        font-size: 1.1rem;
+    }
+
+    #hamburger {
+        display: block;
+    }
+
+    /* Projects cards stack vertically on mobile */
+    #projects>article {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    #projects figure {
+        margin-bottom: 1rem;
+    }
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0 1rem;
+}
+
+
+/* ---------- About Me Section ---------- */
+#about {
+    max-width: 1000px;
+    margin: 3rem auto;
+    padding: 0 1.5rem;
+    text-align: center;
+}
+
+#about p {
+    font-size: 1.125rem;
+    line-height: 1.8;
+    margin-top: 1rem;
+    color: #444;
+}
+
+#about p {
+    margin-top: -1rem;
+}
+
+
+/* ---------- Projects Section ---------- */
+#projects {
+    max-width: 1000px;
+    margin: 3rem auto;
+    padding: 0 1.5rem;
+}
+
+#projects h2 {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+#projects article h3 {
+    text-align: center;
+}
+
+#projects>article {
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 1.5rem;
+    margin-bottom: 2rem;
+    display: flex;
+    gap: 1.5rem;
+    flex-direction: column;
+    align-items: center;
+    transition: transform 0.3s ease;
+}
+
+#projects>article:hover {
+    transform: translateY(-5px);
+}
+
+#projects figure {
+    margin: 0;
+    flex-shrink: 0;
+}
+
+#projects img {
+    border-radius: 6px;
+    width: 180px;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+}
+
+#projects p {
+    margin: 0;
+    color: #555;
+    font-size: 1rem;
+    flex: 1;
+}
+
+#projectFilters {
+    text-align: center;
+    margin-bottom: 1rem;
+}
+
+#projectFilters button {
+    background-color: #1e2a38;
+    color: white;
+    border: none;
+    margin: 0 0.25rem 1rem 0;
+    padding: 0.5rem 1rem;
+    cursor: pointer;
+    border-radius: 4px;
+    font-weight: 600;
+    transition: background-color 0.3s ease;
+}
+
+#projectFilters button:hover,
+#projectFilters button:focus {
+    background-color: #4fc3f7;
+    outline: none;
+}
+
+#projectFilters button.active {
+    background-color: #4fc3f7;
+    color: #1e2a38;
+}
+
+
+
+
+/* ---------- Skills Section ---------- */
+#skills {
+    max-width: 600px;
+    margin: 3rem auto;
+    padding: 0 1.5rem;
+    text-align: center;
+    /* center section content (heading) */
+}
+
+#skills ul {
+    list-style: none;
+    padding: 0;
+    margin: 0 auto;
+    display: inline-block;
+    text-align: left;
+    margin-top: -1;
+
+}
+
+#skills li {
+    position: relative;
+    padding-left: 2rem;
+    margin-bottom: 1rem;
+    font-size: 1.125rem;
+    color: #333;
+    margin-top: -1rem;
+}
+
+#skills li::before {
+    content: "✓";
+    position: absolute;
+    left: 0;
+    top: 0;
+    color: #4fc3f7;
+    font-weight: bold;
+    font-size: 1.2rem;
+    line-height: 1;
+}
+
+/* ---------- Contact Section ---------- */
+#contact {
+    max-width: 600px;
+    margin: 3rem auto 5rem;
+    padding: 0 1.5rem;
+}
+
+#contact form div {
+    margin-bottom: 1.5rem;
+}
+
+#contact label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+    color: #222;
+}
+
+#contact input,
+#contact textarea {
+    width: 100%;
+    padding: 0.6rem 0.75rem;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1rem;
+    font-family: inherit;
+    resize: vertical;
+    box-sizing: border-box;
+    transition: border-color 0.3s ease;
+}
+
+#contact input:focus,
+#contact textarea:focus {
+    outline: none;
+    border-color: #4fc3f7;
+    box-shadow: 0 0 5px #4fc3f7;
+}
+
+#contact button {
+    background-color: #1e2a38;
+    color: white;
+    border: none;
+    padding: 0.75rem 1.5rem;
+    font-size: 1.1rem;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+#contact button:hover,
+#contact button:focus {
+    background-color: #4fc3f7;
+    color: #1e2a38;
+    outline: none;
+}
+
+.error-message {
+    color: #d93025;
+    font-size: 0.9rem;
+    height: 1.2em;
+    margin-top: 0.2rem;
+    display: block;
+}
+
+input:invalid,
+textarea:invalid {
+    border-color: #d93025;
+}
+
+
+/* ---------- Footer ---------- */
+footer {
+    text-align: center;
+    padding: 1.5rem 0;
+    background-color: #1e2a38;
+    color: white;
+    font-size: 0.9rem;
+    letter-spacing: 0.5px;
+}
+
+.lightbox-modal {
+    display: none;
+    /* hidden by default */
+    position: fixed;
+    z-index: 2000;
+    left: 0;
+    top: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.85);
+    justify-content: center;
+    align-items: center;
+    cursor: zoom-out;
+}
+
+.lightbox-modal.active {
+    display: flex;
+}
+
+.lightbox-modal img {
+    max-width: 90%;
+    max-height: 90%;
+    border-radius: 8px;
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.8);
+}
+
+.lightbox-close {
+    position: fixed;
+    top: 20px;
+    right: 30px;
+    font-size: 3rem;
+    color: white;
+    cursor: pointer;
+    user-select: none;
+}
+
+/* ---------- Pong Game Scoped Styles ---------- */
+#pong-game {
+    background: #222;
+    color: #fff;
+    text-align: center;
+    font-family: Arial, sans-serif;
+    padding: 2rem 0;
+    border-radius: 8px;
+    box-shadow: 0 0 10px #000 inset;
+    margin-top: 2rem;
+}
+
+#pong-game h2 {
+    margin-top: 0;
+    margin-bottom: 1rem;
+    color: #fff;
+}
+
+#pongCanvas {
+    background: #111;
+    display: block;
+    margin: 0 auto;
+    border: 2px solid #fff;
+    box-shadow: 0 0 20px #000;
+}

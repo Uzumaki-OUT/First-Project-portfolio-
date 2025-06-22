@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Jordan's Portfolio</title>
+</head>
+
+<body>
+
+    <header role="banner">
+        <h1>Jordan's Portfolio</h1>
+
+        <!--HAMBURGER TIME-->
+        <div id="hamburger" aria-label="Toggle navigation menu" role="button" tabindex="0">
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+        </div>
+
+        <nav role="navigation" aria-label="Main Navigation">
+            <ul>
+                <li><a href="#about">About</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main role="main">
+        <h2>About Me</h2>
+        <section id="about">
+            <p>Hello! I'm a newer web developer with a passion for creating beautiful and functional websites. I have
+                experience in HTML, CSS, and JavaScript, and I'm always eager to learn new technologies.</p>
+        </section>
+
+        <section id="projects">
+            <h2>Projects</h2>
+            <article>
+                <h3>Pong Game</h3>
+                <figure>
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/2/20/Pong_game_on_TV.jpg"
+                        alt="Screenshot of Pong Game" width="300">
+                    <figcaption>A simple one player vs AI Pong clone built using HTML5, CSS and JavaScript.
+                    </figcaption>
+                </figure>
+                <p>
+                    <em>This is my project for the classic arcade game Pong with mouse controls and smooth ball physics.
+                        Features include scorekeeping, collision detection, and a basic AI opponent.</em>
+                </p>
+            </article>
+            <section id="pong-game" style="display: none;">
+                <h2>Pong Game</h2>
+                <canvas id="pongCanvas" width="600" height="400"></canvas>
+                <button id="closePongBtn">Close Game</button>
+            </section>
+
+            <button id="showPongBtn">Play Pong</button>
+        </section>
+
+        <h2>Skills</h2>
+        <section id="skills">
+            <ul>
+                <li>HTML</li>
+                <li>CSS</li>
+                <li>JavaScript</li>
+                <li>Responsive Design</li>
+                <li>Version Control (Git)</li>
+            </ul>
+        </section>
+
+        <section id="contact" aria-labelledby="contact-heading">
+            <h2 id="contact-heading">Contact Me</h2>
+            <form id="contactForm" action="/submit-form" method="post" aria-label="Contact Form">
+
+                <div>
+                    <label for="name">Name:</label>
+                    <input type="text" id="name" name="name" required>
+                </div>
+
+                <div>
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+
+                <div>
+                    <label for="message">Message:</label>
+                    <textarea id="message" name="message" rows="5" required></textarea>
+                </div>
+
+                <button type="submit" aria-label="Send your message">Send Message</button>
+            </form>
+            <p id="formFeedback" aria-live="polite"></p>
+        </section>
+    </main>
+
+    <footer role="contentinfo">
+        <p>&copy; 2025 JordanLovesTech</p>
+    </footer>
+
+    <div id="lightboxModal" class="lightbox-modal" aria-hidden="true" role="dialog" aria-label="Image preview">
+        <button id="closeLightbox" class="lightbox-close" aria-label="Close image preview">&times;</button>
+        <img id="lightboxImage" alt="">
+    </div>
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>
